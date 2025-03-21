@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ListaUsuarios from "./components/ListaUsuarios";
+import { ValidacionesProvider } from "./components/FormularioUsu";
+import EstadisticasGlucosa from "./components/EstadisticasGlucosa";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ValidacionesProvider>
+            <div className="App">
+                <h1>Gestión de Usuarios</h1>
+                <ListaUsuarios />
+                
+                {/* Sección de estadísticas de glucosa */}
+                <div className="mt-10">
+                    <h2>Estadísticas de Glucosa</h2>
+                    <EstadisticasGlucosa />
+                </div>
+            </div>
+        </ValidacionesProvider>
+    );
 }
 
 export default App;
